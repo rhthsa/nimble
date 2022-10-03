@@ -19,6 +19,8 @@ domain_name: "hpe.lab"
 rhel_image: "rhel8"
 volume_name: "myvol1"
 volume_igroup: "eap1.hpe.lab"
+nimble_user: "admin"
+nimble_pass: "password"
 
 ansible_connection: local
 # ansible_user: root
