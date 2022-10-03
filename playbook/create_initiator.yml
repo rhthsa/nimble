@@ -1,8 +1,5 @@
 ---
 
-- name: Retrieve node facts
-  hosts: eap1.hpe.lab
-
 - name: Create iSCSI initators for hosts in nodes group
   gather_facts: false
   hosts: nva
