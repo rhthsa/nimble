@@ -11,9 +11,9 @@
   tasks:
     - name: Add host
       hpe_nimble_initiator_group:
-        host: "{{ nimble_host }}"
-        username: "{{ nimble_user }}"
-        password: "{{ nimble_pass }}"
+        host: "172.30.4.80"
+        username: "admin"
+        password: "password"
         access_protocol: iscsi
         name: "{{ item }}"
         iscsi_initiators: [
