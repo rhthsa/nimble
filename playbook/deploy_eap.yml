@@ -1,6 +1,6 @@
 ---
 - name: deploy EAP
-  hosts: eap1.rhdemo.local
+  hosts: eap1.hpe.lab
 
   tasks:
 
