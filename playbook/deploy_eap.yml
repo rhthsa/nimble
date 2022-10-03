@@ -8,38 +8,38 @@
     blockinfile:
       path: /etc/hosts
       block: |
-        192.168.3.222  itehost.example.com   
+        172.30.252.32  ansible.hpe.lab   
 
   - name: add eap1 to /etc/hosts
     lineinfile:
       path: /etc/hosts
-      regexp: 'eap.rhdemo.local'
-      line: '192.168.3.225  eap1.rhdemo.local  eap'
+      regexp: 'eap.localdomain'
+      line: '172.30.252.36  eap1.hpe.lab  eap'
 
   - name: copy jboss binary file
     synchronize:
-      src: /home/redhat/jboss-eap-7.4.0.zip
-      dest: /home/redhat/
-    delegate_to: itehost.example.com
+      src: /home/admin/Downloads/jboss-eap-7.4.0.zip
+      dest: /home/admin/
+    delegate_to: ansible.hpe.lab
 
 
   - name: copy jdk binary file
     synchronize:
-      src: /home/redhat/java-11-openjdk-11.0.9.11-1.portable.jdk.el.x86_64.tar.xz
-      dest: /home/redhat/
-    delegate_to: itehost.example.com
+      src: /home/admin/Downloads/java-11-openjdk-11.0.9.11-1.portable.jdk.el.x86_64.tar.xz
+      dest: /home/admin/
+    delegate_to: ansible.hpe.lab
 
   - name: Extract jdk binary file
     unarchive:
-      src: /home/redhat/java-11-openjdk-11.0.9.11-1.portable.jdk.el.x86_64.tar.xz
-      dest: /home/redhat/
+      src: /home/admin/java-11-openjdk-11.0.9.11-1.portable.jdk.el.x86_64.tar.xz
+      dest: /home/admin/
       remote_src: yes
 
 
   - name: Create a jdk folder symbolic link
     file:
-      src: /home/redhat/java-11-openjdk-11.0.9.11-1.portable.jdk.el.x86_64
-      dest: /home/redhat/java-11
+      src: /home/admin/java-11-openjdk-11.0.9.11-1.portable.jdk.el.x86_64
+      dest: /home/admin/java-11
       state: link
 
   - name: Set JAVA_HOME
@@ -47,7 +47,7 @@
       dest: /etc/environment
       state: present
       regexp: '^JAVA_HOME'
-      line: 'JAVA_HOME=/home/redhat/java-11'
+      line: 'JAVA_HOME=/home/admin/java-11'
 
 
   - name: export PATH
