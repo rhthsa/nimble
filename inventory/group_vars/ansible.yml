@@ -17,6 +17,8 @@ domainadmin: "administrator@vcenter.hpe.lab"
 domainadminpassword: "P@ssw0rd1234!"
 domain_name: "hpe.lab"
 rhel_image: "rhel8"
+volume_name: "myvol1"
+volume_igroup: "eap1.hpe.lab"
 
 ansible_connection: local
 # ansible_user: root
