@@ -15,13 +15,12 @@
         username: "admin"
         password: "password"
         access_protocol: iscsi
-        name: "{{ item }}"
+        name: "eap1.hpe.lab"
         iscsi_initiators: [
           {
-            iqn: "{{ hostvars[item]['ansible_iscsi_iqn'] }}",
-            label: "{{ item }}"
+            iqn: "iqn.1994-05.com.redhat:561677d70c5",
+            label: "eap1.hpe.lab"
           }
         ]
-        description: "Initiator Group for {{ item }}"
+        description: "Initiator Group for eap1.hpe.lab"
         state: present
-      with_items: "{{ groups.nodes }}"
