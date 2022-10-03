@@ -14,7 +14,7 @@
     lineinfile:
       path: /etc/hosts
       regexp: 'eap.localdomain'
-      line: '172.30.252.36  eap1.hpe.lab  eap'
+      line: '172.30.252.31  eap1.hpe.lab  eap'
 
   - name: copy jboss binary file
     synchronize:
